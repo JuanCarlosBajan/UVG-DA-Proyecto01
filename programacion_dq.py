@@ -23,7 +23,8 @@ with open("listado_entradas.txt", "r") as archivo:
 times = []
 for line in contenido:
     words = line.split(',')
-    t = timeit.timeit(stmt=lambda: edit_distance(words[0], words[1]), number=1)
+    t = timeit.timeit(stmt=lambda: edit_distance(words[0], words[1]), number=10)
+    print("Tiempo de ejecución: ", t)
     times.append(t)
 
 etiquetas = list(range(len(times)))
